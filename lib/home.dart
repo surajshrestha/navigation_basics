@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_techniques/second_route.dart';
+import 'package:navigation_techniques/util/route_name.dart';
 
 class Home extends StatefulWidget {
   final String returnValue = "";
-  static const String id = "home_route";
 
   @override
   State<Home> createState() => _HomeState();
@@ -22,12 +21,8 @@ class _HomeState extends State<Home> {
           height: double.infinity,
           alignment: Alignment.center,
           child: TextButton(
-              onPressed: () async {
-                var result = await Navigator.pushNamed(context, SecondRoute.id, arguments: {
-                  "name": "Suraj Shrestha",
-                  "designation": "Technology Manager",
-                });
-                print(result);
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesName.second_route);
               },
               child: Text("Go To Second Route"),
               style: ElevatedButton.styleFrom(foregroundColor: Colors.blue)),
