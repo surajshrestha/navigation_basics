@@ -9,7 +9,7 @@ class Routes{
       case RoutesName.homeScreen:
         return MaterialPageRoute(builder: (context) => Home());
       case RoutesName.second_route:
-        return MaterialPageRoute(builder: (context) => SecondRoute());
+        return MaterialPageRoute(builder: (context) => SecondRoute(settings.arguments as Map));
       default:
         return MaterialPageRoute(builder: (context) {
           return Scaffold(
