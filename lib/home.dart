@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:navigation_techniques/second_route.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final String returnValue = "";
 
   @override
   State<Home> createState() => _HomeState();
@@ -21,13 +21,18 @@ class _HomeState extends State<Home> {
           height: double.infinity,
           alignment: Alignment.center,
           child: TextButton(
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                final result = await Navigator.push(
                   context,
                   MaterialPageRoute(builder:(context) {
-                    return SecondRoute();
+                    return SecondRoute("Suraj");
                   },),
                 );
+                if(result!=null){
+                  setState(() {
+                    print(result);
+                  });
+                }
               },
               child: Text("Go To Second Route"),
               style: ElevatedButton.styleFrom(foregroundColor: Colors.blue)),
