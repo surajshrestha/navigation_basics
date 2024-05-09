@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class SecondRoute extends StatelessWidget {
   static const String id = "second_route";
+  
+
 
   @override
   Widget build(BuildContext context) {
+    final arguements = ModalRoute.of(context)!.settings.arguments as Map;
+    print(arguements.toString()+" "+arguements['name']);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

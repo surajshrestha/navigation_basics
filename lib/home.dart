@@ -23,7 +23,10 @@ class _HomeState extends State<Home> {
           alignment: Alignment.center,
           child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, SecondRoute.id);
+                Navigator.pushNamed(context, SecondRoute.id,arguments: {
+                  "name":"Suraj Shrestha",
+                  "designation":"Technology Manager",
+                });
               },
               child: Text("Go To Second Route"),
               style: ElevatedButton.styleFrom(foregroundColor: Colors.blue)),
