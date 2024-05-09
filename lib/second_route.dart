@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SecondRoute extends StatelessWidget {
-  final String value;
-  SecondRoute(this.value);
+  static const String id = "second_route";
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class SecondRoute extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Welcome to Second Route : ${value}"),
+              Text("Welcome to Second Route"),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context,"Return Value");

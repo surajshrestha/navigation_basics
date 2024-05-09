@@ -3,6 +3,7 @@ import 'package:navigation_techniques/second_route.dart';
 
 class Home extends StatefulWidget {
   final String returnValue = "";
+  static const String id = "home_route";
 
   @override
   State<Home> createState() => _HomeState();
@@ -21,18 +22,8 @@ class _HomeState extends State<Home> {
           height: double.infinity,
           alignment: Alignment.center,
           child: TextButton(
-              onPressed: () async {
-                final result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder:(context) {
-                    return SecondRoute("Suraj");
-                  },),
-                );
-                if(result!=null){
-                  setState(() {
-                    print(result);
-                  });
-                }
+              onPressed: () {
+                Navigator.pushNamed(context, SecondRoute.id);
               },
               child: Text("Go To Second Route"),
               style: ElevatedButton.styleFrom(foregroundColor: Colors.blue)),
